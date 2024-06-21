@@ -15,7 +15,7 @@ sprite_sheet = spritesheet.SpriteSheet(sprite_sheet_image)
 BG = (50, 50, 50)
 BLACK = (0, 0, 0)
 
-
+#scaled by 3 so new sub image is 72 pixels wide
 frame_0 = sprite_sheet.get_image(0, 24, 24, 3, BLACK)
 frame_1 = sprite_sheet.get_image(1, 24, 24, 3, BLACK)
 frame_2 = sprite_sheet.get_image(2, 24, 24, 3, BLACK)
@@ -28,10 +28,11 @@ while run:
 	screen.fill(BG)
 
 	#show frame image
+ #get_image gets the image but blit determines coordinate each image will be on screen
 	screen.blit(frame_0, (0, 0))
-	screen.blit(frame_1, (72, 0))
-	screen.blit(frame_2, (150, 0))
-	screen.blit(frame_3, (250, 0))
+	screen.blit(frame_1, (28, 0))
+	screen.blit(frame_2, (56, 0))
+	screen.blit(frame_3, (100, 0))
 
 	#event handler
 	for event in pygame.event.get():
